@@ -14,7 +14,6 @@ require 'hydra_attribute'
 
 ActiveSupport.on_load(:active_record) do
   self.default_timezone          = :utc
-  self.mass_assignment_sanitizer = :strict
 end
 
 ENV['DB'] ||= 'sqlite'

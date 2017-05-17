@@ -6,8 +6,4 @@ end
 
 class ProductWhiteList < ActiveRecord::Base
   include HydraAttribute::ActiveRecord
-
-  attr_accessible :name
-
-  self.mass_assignment_sanitizer = :logger
 end

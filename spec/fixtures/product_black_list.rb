@@ -6,8 +6,4 @@ end
 
 class ProductBlackList < ActiveRecord::Base
   include HydraAttribute::ActiveRecord
-
-  attr_protected :name
-
-  self.mass_assignment_sanitizer = :logger
 end
