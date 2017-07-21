@@ -10,11 +10,11 @@ module HydraAttribute
           table = record.class.arel_table
           arel  = record.class.select_manager
 
-          where = comparison(table, attribute, value, klass.column(attribute.to_s).text?)
+          where = comparison(table, attribute, value, klass.column(attribute.to_s).type === :string)
 
           if options[:scope]
             where = Array(options[:scope]).inject(where) do |query, field|
-              query.and(comparison(table, field, record.send(field), klass.column(field.to_s).text?))
+              query.and(comparison(table, field, record.send(field), klass.column(field.to_s).type === :string))
             end
           end
 

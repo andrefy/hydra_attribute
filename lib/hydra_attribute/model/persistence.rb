@@ -120,7 +120,7 @@ module HydraAttribute
         #
         # @return [Arel::Table]
         def arel_table
-          @arel_table ||= Arel::Table.new(table_name, self)
+          @arel_table ||= Arel::Table.new(table_name)
         end
 
         # Finds all records
@@ -252,7 +252,7 @@ module HydraAttribute
         #
         # @return [Arel::SelectManager]
         def select_manager
-          arel_table.from(arel_table)
+          arel_table.from
         end
 
         private

@@ -51,7 +51,7 @@ module HydraAttribute
       def arel_tables
         @arel_tables ||= Hash.new do |entity_tables, entity_table|
           entity_tables[entity_table] = Hash.new do |backend_types, backend_type|
-            backend_types[backend_type] = Arel::Table.new("hydra_#{backend_type}_#{entity_table}", ::ActiveRecord::Base)
+            backend_types[backend_type] = Arel::Table.new("hydra_#{backend_type}_#{entity_table}")
           end
         end
       end
