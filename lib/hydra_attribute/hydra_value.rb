@@ -37,9 +37,9 @@ module HydraAttribute
       @entity     = entity
       @attributes = attributes
       if attributes.has_key?(:value)
-        @value = column.type_cast(attributes[:value])
+        @value = attributes[:value]
       else
-        @value = column.type_cast(column.default)
+        @value = column.default
         attributes[:value] = column.default
       end
     end
